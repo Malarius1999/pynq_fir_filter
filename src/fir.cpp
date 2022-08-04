@@ -46,7 +46,7 @@ void fir_fixed(const float input[], float output[]){
 		}
 
 		acc += (ap_fixed<W,I>)input[j] * taps_fixed[0];
-		shift_reg_fixed[0] = input[j];
+		shift_reg_fixed[0] = (ap_fixed<W,I>)input[j];
 		output[j] = (float)acc;
 	}
 }
